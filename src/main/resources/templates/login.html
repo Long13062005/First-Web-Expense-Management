@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,7 @@
             align-items: center;
         }
         .signup{
-            height: 350px;
+            height: 450px;
             width: 400px;
             background-color: #ffffff;
             padding: 30px 75px 300px;
@@ -131,6 +132,7 @@
             cursor: pointer;
             margin-top: 20px;
             border: 2px solid  #031544;
+            justify-content: flex-end;
 
         }
         .login-link {
@@ -154,7 +156,7 @@
             color: rgb(219, 61, 61);
             font-size: 15px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 120px;
             display: flex;
         }
         input::placeholder {
@@ -221,8 +223,9 @@
                 <form method="post" th:object = "${user}">
                     <div class="signup">
                         <h1 style="text-align: center; font-weight: bold;">Sign in</h1>
-                        <input type="text" id="email" class="signup-input" placeholder="Username">
+                        <input type="text" id="email" class="signup-input" placeholder="Email">
                         <input type="password" id="password" class="signup-input" placeholder="Password">
+                        <p th:if="${param.error}" th:text="${error}"></p>
                         <button class="signup-login">Sign in</button>
                         <p class="signup-already">
                             <span>Still not have an account?</span>

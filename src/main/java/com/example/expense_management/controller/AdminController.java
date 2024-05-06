@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
     @Autowired
     public UserService userService;
+    @GetMapping("/")
+    public String homeAdmin() {
+        return "redirect:/admin/";
+    }
 
     @GetMapping("/user")
     public String showUserList(Model model, @RequestParam(defaultValue = "",required = false) String valueSearch,
