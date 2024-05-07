@@ -22,8 +22,6 @@ public class UserService implements IUserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    UserDTO userDTO;
-
 
     @Override
     public Page<User> findUserByEmailContaining(String name, Pageable pageable) {
@@ -83,6 +81,11 @@ public class UserService implements IUserService {
         }else {
             return new LoginMessage("Email not exits", false);
         }
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        return iUserRepository.findByEmail(email);
     }
 
 }

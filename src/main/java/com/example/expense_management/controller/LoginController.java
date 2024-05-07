@@ -24,18 +24,16 @@ public class LoginController {
     private LoginMessage loginMessage;
 
     @GetMapping()
-    public String loginPage(@ModelAttribute LoginDTO loginDTO, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return "login";
-
-        }
+    public String loginPage(@ModelAttribute LoginDTO loginDTO, Model model) {
+        model.addAttribute("loginUser", new LoginDTO());
         return "login";
     }
 
     @PostMapping()
-    public String showLoginForm(@ModelAttribute User user, Model model) {
-        loginMessage = userService.loginUser(new LoginDTO(user.getEmail(), user.getPassword()));
+    public String showLoginForm(@ModelAttribute("loginUser") LoginDTO loginDTO, Model model) {
+        loginMessage = userService.loginUser(new LoginDTO(loginDTO.getEmail(), loginDTO.getPassword()));
         if (loginMessage.getMessage().equals("Login Success") )  {
+            User user = userService.findByEmail(loginDTO.getEmail());
             if (user.getRoleId() == 1) {
                 model.addAttribute("firstname", user.getFirstName());
                 model.addAttribute("lastname", user.getLastName());

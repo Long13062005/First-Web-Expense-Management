@@ -18,5 +18,6 @@ public interface IUserService {
     void delete(int id);
     Optional<User> findById(int id);
     LoginMessage loginUser(LoginDTO loginDTO);
+    User findByEmail(String email);
 
 }
