@@ -31,6 +31,10 @@ public class UserService implements IUserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8d0a609c3efe2b6e9b6a7c7a62170dc06a2de8f
     @Override
     public Page<User> findUserByUsernameContaining(String username, Pageable pageable){
         return iUserRepository.findUserByUsernameContaining(username,pageable);
@@ -74,6 +78,7 @@ public class UserService implements IUserService {
     }
 
     @Override
+<<<<<<< HEAD
     public Optional<User> findUserByUsernameAndPassword(String username, String password) {
         return iUserRepository.findUserByUsernameAndPassword(username,password);
     }
@@ -101,4 +106,10 @@ public class UserService implements IUserService {
     }
 
 
+=======
+    public User findByEmail(String email) {
+        return iUserRepository.findByEmail(email);
+    }
+
+>>>>>>> c8d0a609c3efe2b6e9b6a7c7a62170dc06a2de8f
 }

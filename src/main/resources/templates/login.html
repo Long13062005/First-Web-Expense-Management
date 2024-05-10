@@ -25,6 +25,7 @@
             </div>
 
             <div class="col-lg-4">
+<<<<<<< HEAD
                 <form method="post" th:object = "${loginUser}" th:action="@{/login}">
                     <div class="signup">
                         <h1 style="text-align: center; font-weight: bold;">Sign in</h1>
@@ -37,6 +38,15 @@
                         <div th:if="${param.logout}">
                             <div class="alert alert-success">You have been logged out !!!</div>
                         </div>
+=======
+                <form method="post" th:object = "${loginUser}">
+                    <div class="signup">
+                        <h1 style="text-align: center; font-weight: bold;">Sign in</h1>
+                        <input th:field="*{email}" type="text" id="email" class="signup-input" placeholder="Email">
+                        <input th:field="*{password}" type="password" id="password" class="signup-input" placeholder="Password">
+                        <p th:text="${error}"></p>
+                        <button class="signup-login">Sign in</button>
+>>>>>>> c8d0a609c3efe2b6e9b6a7c7a62170dc06a2de8f
                         <p class="signup-already">
                             <span>Still not have an account?</span>
                             <a  th:href="@{/register}" class="login-link" type="button">Register</a>

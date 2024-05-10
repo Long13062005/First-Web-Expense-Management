@@ -16,11 +16,17 @@ public interface IUserService {
     Page<User> findUserByUsernameContaining(String username, Pageable pageable);
     boolean save(User user) throws RecordNotFoundException;
     void delete(int id);
+<<<<<<< HEAD
     User findByUsername(String username);
     User findById(int id);
     LoginMessage login(LoginDTO loginDTO);
 
     Optional<User> findUserByUsernameAndPassword(String username,String password);
 
+=======
+    Optional<User> findById(int id);
+    LoginMessage loginUser(LoginDTO loginDTO);
+    User findByEmail(String email);
+>>>>>>> c8d0a609c3efe2b6e9b6a7c7a62170dc06a2de8f
 
 }
