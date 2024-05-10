@@ -11,5 +11,4 @@ import java.util.Date;
 @Repository
 public interface IExpenseRepository extends JpaRepository<Expenses,Integer> {
     Page<Expenses> findExpensesByDateContaining(Date date, Pageable pageable);
-
 }

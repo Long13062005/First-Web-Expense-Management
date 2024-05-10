@@ -1,24 +1,17 @@
 package com.example.expense_management.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class LoginDTO {
-    private String email;
+    private String username;
     private String password;
 
-    public LoginDTO() {
+    public String getUsername() {
+        return username;
     }
 
-    public LoginDTO(String email, String password) {
-        this.email = email;
-        this.password = password;
-
-    } //create getters and setters
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -27,5 +20,13 @@ public class LoginDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public LoginDTO(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public LoginDTO() {
     }
 }

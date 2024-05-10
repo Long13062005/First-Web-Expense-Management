@@ -1,6 +1,5 @@
 package com.example.expense_management.service;
 
-import com.example.expense_management.config.LoginMessage;
 import com.example.expense_management.dto.LoginDTO;
 import com.example.expense_management.model.Expenses;
 import org.springframework.data.domain.Page;

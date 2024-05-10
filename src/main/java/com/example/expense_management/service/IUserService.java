@@ -13,10 +13,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IUserService {
-    Page<User> findUserByEmailContaining(String Email, Pageable pageable);
-    void save(User user) throws RecordNotFoundException;
+    Page<User> findUserByUsernameContaining(String username, Pageable pageable);
+    boolean save(User user) throws RecordNotFoundException;
     void delete(int id);
-    Optional<User> findById(int id);
-    LoginMessage loginUser(LoginDTO loginDTO);
+    User findByUsername(String username);
+    User findById(int id);
+    LoginMessage login(LoginDTO loginDTO);
+
+    Optional<User> findUserByUsernameAndPassword(String username,String password);
+
 
 }

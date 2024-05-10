@@ -27,7 +27,6 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     implementation group: 'org.springframework.boot', name: 'spring-boot-actuator-autoconfigure', version: '3.2.2'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-
 }
 
 tasks.named('test') {

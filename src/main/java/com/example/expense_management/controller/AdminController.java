@@ -24,7 +24,7 @@ public class AdminController {
     public String showUserList(Model model, @RequestParam(defaultValue = "",required = false) String valueSearch,
                                @RequestParam(required = false, defaultValue = "0") int page) {
         Pageable pageable = PageRequest.of(page, 4);
-        Page<User> users = userService.findUserByEmailContaining(valueSearch,pageable);
+        Page<User> users = userService.findUserByUsernameContaining(valueSearch,pageable);
         model.addAttribute("userList",users);
         model.addAttribute("valueSearch",valueSearch);
         return "admin/adminHome";

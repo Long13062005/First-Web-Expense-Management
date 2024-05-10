@@ -14,7 +14,7 @@ public class Expenses {
     @Column(nullable = false)
     private double price;
     @Column(unique = true)
-    private String email;
+    private String username;
     private String description;
 
     @ManyToOne
@@ -56,12 +56,12 @@ public class Expenses {
         this.price = price;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getDescription() {

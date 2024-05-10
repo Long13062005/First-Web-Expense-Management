@@ -13,11 +13,7 @@ public class DataValidator {
          *
          * } else { return false; }
          */
-        if (val.matches(name)) {
-            return true;
-        } else {
-            return false;
-        }
+        return val.matches(name);
     }
 
 
@@ -25,30 +21,18 @@ public class DataValidator {
     public static boolean isPassword(String val) {
         String passregex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\\S])[A-Za-z0-9\\S]{6,12}$";
 
-        if (val.matches(passregex)) {
-            return true;
-        } else {
-            return false;
-        }
+        return val.matches(passregex);
     }
 
 
     public static boolean isPhoneNo(String val) {
         String regex = "^[7-9][0-9]{9}$";
-        if (val.matches(regex)) {
-            return true;
-        } else {
-            return false;
-        }
+        return val.matches(regex);
     }
 
 
     public static boolean isNull(String val) {
-        if (val == null || val.trim().length() == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return val == null || val.trim().length() == 0;
     }
 
 
